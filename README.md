@@ -22,7 +22,18 @@ git clone https://github.com/rgrannell1/polonium
 cd polonium
 ```
 
-now you can test the program with
+Run the following command.
+
+```
+sudo nano ~/.bashrc
+```
+add the line,
+
+```
+alias polo=path/to/polonium.py
+```
+
+and you're ready to go. Now you can test the program with
 
 ```
 polo create facebook
