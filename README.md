@@ -1,8 +1,8 @@
 Polonium
 ========
 
-Polonium is a stateless password generator & manager, that
-lets you create and retrieve passwords without storing them in a database. 
+Polonium is a stateless password generator & manager that creates 
+and retrieves passwords without storing them in a database. 
 The advantages to this approach are obvious; your database can't be
 stolen, and no syncronisation is required between your devices.
 
