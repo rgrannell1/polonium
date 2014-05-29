@@ -55,11 +55,13 @@ If the attacker knows your dictionary they will still have an infeasible
 search space of >10^20 possible passwords; if they do not know, the odds
 are even less in their favour.
 
+#### Iterations & Performance
 
 Modern GPU-based cracking can make billions of attempts a day at password cracking, but 
 polonium-based passwords are fairly resistant to this strategy; they by default use one-million 
-iterations to generate your password. If this is too hard on your battery / device, 
-set polonium to a cosy 200,000 iterations.
+iterations to generate your password. High iteration counts wastes the attackers time and raises 
+their electric bill. If this is too hard on your battery / device,  set polonium to a cosy 
+200,000 iterations. 
 
 ### Licence
 
