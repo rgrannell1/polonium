@@ -35,11 +35,7 @@ Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is
 a method of gathering command-line arguments, calculating arguments and
 converting the derived keys to base62.
 
-Base62 (alphanumeric) passwords are generally permitted by online services 
-and are entropy-dense compared to base16 passwords. Even short Base62 passwords
-exceed the recommended minimum of 80-bits of entropy per password.
-
-#### Master Password
+#### - Master Password
 
 You must not use your master password anywhere it may be compromised; if your
 master password is compromised, all polonium-derived passwords will also be 
@@ -55,13 +51,20 @@ If the attacker knows your dictionary they will still have an infeasible
 search space of >10^20 possible passwords; if they do not know, the odds
 are even less in their favour.
 
-#### Iterations & Performance
+#### - Iterations & Performance
 
 Modern GPU-based cracking can make billions of attempts a day at password cracking, but 
 polonium-based passwords are fairly resistant to this strategy; they by default use one-million 
 iterations to generate your password. High iteration counts wastes the attackers time and raises 
 their electric bill. If this is too hard on your battery / device,  set polonium to a cosy 
 200,000 iterations. 
+
+#### - Password Encoding
+
+Polonium passwords are base62-encoded. Although base16 and base64 are more common,
+Base62 (alphanumeric) passwords are generally permitted by online services 
+and are entropy-dense compared to base16 passwords. Even short Base62 passwords
+exceed the recommended minimum of 80-bits of entropy per password.
 
 ### Licence
 
