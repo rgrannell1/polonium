@@ -28,6 +28,12 @@ now you can test the program with
 polo create facebook
 ```
 
+and
+
+```
+polo get facebook
+```
+
 ### Details
 
 Polonium is a shallow wrapper around node.js's implementation of 
