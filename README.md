@@ -1,15 +1,15 @@
 Polonium
 ========
 
-Polonium is a stateless password generator & manager that creates
-and retrieves passwords without storing them in a database.
+Polonium is a stateless password manager that creates
+& retrieves passwords without storing them in a database.
 The advantages to this approach are obvious; your database can't be
 stolen, and no syncronisation is required between your devices.
 
 Polonium only requires you to remember one master password, from which it
-derives subordinate passwords for your various apps. Even if these subordinate
-passwords are compromised the attacker cannot work backwards and discover
-your master password.
+derives subordinate passwords for your various service logins. Even if these 
+subordinate passwords are compromised the attacker cannot compromise your 
+master password.
 
 ### Requirements
 
@@ -49,8 +49,8 @@ polo get facebook
 
 Polonium is a shallow wrapper around node.js's implementation of
 Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is
-a method of gathering command-line arguments, calculating arguments and
-converting the derived keys to base62.
+a method of gathering command-line arguments and converting the derived 
+keys to base62.
 
 For more information on PBKDF2 see the following resources:
 
@@ -65,14 +65,14 @@ master password is compromised, all polonium-derived passwords will also be
 cracked.
 
 A good, XKCD-approved method of making a master password is to take you favourite large
-dictionary - for example the Oxford English Dictionary - and choose four
+dictionary - for example the Oxford English Dictionary - and choose five
 or more random words as your password.
 
 <img src="http://imgs.xkcd.com/comics/password_strength.png" title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize." alt="Password Strength" width="500" />
 
-If the attacker knows your dictionary they will still have an infeasible
-search space of >10^20 possible passwords; if they do not know, the odds
-are even less in their favour.
+Taking the OED as an example, choosing five of its 170,000 words ges yot 86 bits of entropy. If the 
+attacker does not know your choice of dictionary your security depends on the length of your 
+password.
 
 #### - Iterations & Performance
 
