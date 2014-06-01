@@ -4,7 +4,7 @@ Polonium
 Polonium is a stateless password manager that creates
 & retrieves passwords without storing them in a database.
 The advantages to this approach are obvious; your database can't be
-stolen, and no syncronisation is required between your devices.
+stolen, and you can get your passwords anywhere you can get polonium.
 
 Polonium only requires you to remember one master password, from which it
 derives subordinate passwords for your various service logins. Even if these 
