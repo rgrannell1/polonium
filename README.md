@@ -19,7 +19,7 @@ master password.
 
 ### Installation
 
-- Dependencies
+#### - Dependencies
 
 To install node.js on Ubuntu use
 
@@ -35,7 +35,7 @@ The command line parser docopt is also required by bismuth
 sudo npm install -g docopt
 ```
 
-- Polonium
+#### - Polonium
  
 First, grab the repository from Github.
 
