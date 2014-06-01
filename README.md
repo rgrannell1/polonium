@@ -1,12 +1,12 @@
 Polonium
 ========
 
-Polonium is a stateless password generator & manager that creates 
-and retrieves passwords without storing them in a database. 
+Polonium is a stateless password generator & manager that creates
+and retrieves passwords without storing them in a database.
 The advantages to this approach are obvious; your database can't be
 stolen, and no syncronisation is required between your devices.
 
-Polonium only requires you to remember one master password, from which it 
+Polonium only requires you to remember one master password, from which it
 derives subordinate passwords for your various apps. Even if these subordinate
 passwords are compromised the attacker cannot work backwards and discover
 your master password.
@@ -47,20 +47,20 @@ polo get facebook
 
 ### Details
 
-Polonium is a shallow wrapper around node.js's implementation of 
-Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is 
+Polonium is a shallow wrapper around node.js's implementation of
+Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is
 a method of gathering command-line arguments, calculating arguments and
 converting the derived keys to base62.
 
 #### - Master Password
 
 You must not use your master password anywhere it may be compromised; if your
-master password is compromised, all polonium-derived passwords will also be 
+master password is compromised, all polonium-derived passwords will also be
 cracked.
 
 A good, XKCD-approved method of making a master password is to take you favourite large
-dictionary - for example the Oxford English Dictionary - and choose four 
-or more random words as your password. 
+dictionary - for example the Oxford English Dictionary - and choose four
+or more random words as your password.
 
 <img src="http://imgs.xkcd.com/comics/password_strength.png" title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize." alt="Password Strength" width="500" />
 
@@ -70,16 +70,20 @@ are even less in their favour.
 
 #### - Iterations & Performance
 
-Modern GPU-based cracking can make billions of attempts a day at password cracking, but 
-polonium-based passwords are fairly resistant to this strategy; they by default use one-million 
-iterations to generate your password. High iteration counts wastes the attackers time and raises 
-their electric bill. If this is too hard on your battery / device,  set polonium to a cosy 
-200,000 iterations. 
+Modern GPU-based cracking can make billions of attempts a day at password cracking, so even
+passwords made by secure hashing algorithms can be cracked quickly. Polonium, or more accurately PBKDF2,
+uses key-stretching to slow down brute force attacks.
+
+High iteration counts wastes the attackers time and raises
+their electric bill, so polonium defaults to 1,000,000 iterations.
+
+ If this is too hard on your battery / device,  set polonium to a cosy
+200,000 iterations.
 
 #### - Password Encoding
 
 Polonium passwords are base62-encoded. Although base16 and base64 are more common,
-Base62 (alphanumeric) passwords are generally permitted by online services 
+Base62 (alphanumeric) passwords are generally permitted by online services
 and are entropy-dense compared to base16 passwords. Even short Base62 passwords
 exceed the recommended minimum of 80-bits of entropy per password.
 
