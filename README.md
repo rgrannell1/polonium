@@ -52,7 +52,11 @@ Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is
 a method of gathering command-line arguments, calculating arguments and
 converting the derived keys to base62.
 
-http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf
+For more information on PBKDF2 see the following resources:
+
+* [https://en.wikipedia.org/wiki/PBKDF2](Wikipedia Page)
+
+* [http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf] (NIST Recommendations)
 
 #### - Master Password
 
@@ -76,12 +80,11 @@ Modern GPU-based cracking can make billions of attempts a day at password cracki
 passwords made by secure hashing algorithms can be cracked quickly. Polonium, or more accurately PBKDF2,
 uses key-stretching to slow down brute force attacks.
 
-
 High iteration counts waste the attacker's time and raises their electric bill, so polonium
 spitefully defaults to a costly 1,000,000 iterations.
 
-If this is too hard on your battery / device, set polonium to a cosy number of
-iteration 200,000 iterations.
+If this is too hard on your battery / device, set polonium to a number of iteration
+preferably above 200,000 iterations.
 
 #### - Password Encoding
 
@@ -89,6 +92,13 @@ Polonium passwords are base62-encoded. Although base16 and base64 are more commo
 Base62 (alphanumeric) passwords are generally permitted by online services
 and are entropy-dense compared to base16 passwords. Even short Base62 passwords
 exceed the recommended minimum of 80-bits of entropy per password.
+
+### - Security Notes
+
+- Polonium passwords only have *application* specific salts, not user-specific salts.
+Two uses that use the same salt ('facebook') and master password ('password123') will have
+the same output password.
+
 
 ### Licence
 
@@ -107,6 +117,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Versioning complies with the Semantic Versioning 2.0.0 standard.
 
 http://semver.org/
-
-
-
