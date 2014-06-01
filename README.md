@@ -99,7 +99,6 @@ exceed the recommended minimum of 80-bits of entropy per password.
 Two uses that use the same salt ('facebook') and master password ('password123') will have
 the same output password.
 
-
 ### Licence
 
 The MIT License
