@@ -7,8 +7,8 @@ The advantages to this approach are obvious; your database can't be
 stolen, and you can get your passwords anywhere you can get polonium.
 
 Polonium only requires you to remember one master password, from which it
-derives subordinate passwords for your various service logins. Even if these 
-subordinate passwords are compromised the attacker cannot compromise your 
+derives subordinate passwords for your various service logins. Even if these
+subordinate passwords are compromised the attacker cannot compromise your
 master password.
 
 ### Requirements
@@ -49,14 +49,14 @@ polo get facebook
 
 Polonium is a shallow wrapper around node.js's implementation of
 Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is
-a method of gathering command-line arguments and converting the derived 
+a method of gathering command-line arguments and converting the derived
 keys to base62.
 
 For more information on PBKDF2 see the following resources:
 
-* [https://en.wikipedia.org/wiki/PBKDF2](Wikipedia Page)
+* (https://en.wikipedia.org/wiki/PBKDF2)[Wikipedia Page]
 
-* [http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf] (NIST Recommendations)
+* (http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf)[NIST Recommendations]
 
 #### - Master Password
 
@@ -70,8 +70,8 @@ or more random words as your password.
 
 <img src="http://imgs.xkcd.com/comics/password_strength.png" title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize." alt="Password Strength" width="500" />
 
-Taking the OED as an example, choosing five of its 170,000 words ges yot 86 bits of entropy. If the 
-attacker does not know your choice of dictionary your security depends on the length of your 
+Taking the OED as an example, choosing five of its 170,000 words gets you 86 bits of entropy. If the
+attacker does not know your choice of dictionary your security depends on the length of your
 password.
 
 #### - Iterations & Performance
@@ -90,14 +90,15 @@ preferably above 200,000 iterations.
 
 Polonium passwords are base62-encoded. Although base16 and base64 are more common,
 Base62 (alphanumeric) passwords are generally permitted by online services
-and are entropy-dense compared to base16 passwords. Even short Base62 passwords
+and are entropy-dense compared to base16 passwords. Even short base62 passwords
 exceed the recommended minimum of 80-bits of entropy per password.
 
 ### - Security Notes
 
-- Polonium passwords only have *application* specific salts, not user-specific salts.
-Two uses that use the same salt ('facebook') and master password ('password123') will have
-the same output password.
+Polonium passwords only have *application* specific salts, not user-specific salts.
+Two users that share a salt ('facebook') and master password ('password123') will share
+the same output password. Not every website will salt passwords properly, so use a
+unique master password.
 
 ### Licence
 
