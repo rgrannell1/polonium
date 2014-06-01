@@ -18,40 +18,31 @@ const log = console.log
 
 	log("test that converting from base10.".blue)
 
-	const alphanumbers =
-		'abcdefghijklmnopqrstuvwxyx' +
-		'ABCDEFGHIJKLMNOPQRSTUVWXYX' +
-		'0123456789'
+	for (var masterNum = 0; masterNum < 1000; masterNum++) {
 
+		var master = masterNum.toString()
 
-	var groups = {equal: [], tosmall: [], tobig: []}
+		for (var rounds = 0; rounds < 100; rounds++) {
 
-	for (var ith = 0; ith < 100; ith++) {
-		var base10 = ith.toString()
+			for (var saltNum = 0; saltNum < 100; saltNum++) {
 
-		var base62 = convertToCharset(base10, alphanumbers)
-		var expectLength = lengthInBase({
-			length  : base10.length,
-			fromBase: 10,
-			toBase  : 62
-		})
+				var salt = saltNum.toString()
 
-		if ((base62.length - expectLength) === 0 ) {
-			groups.equal.push( base10 + " " + base62 + " " + expectLength )
+				for (var len = 0; len < 100; len++) {
+
+					var out = deriveKeys({
+						master: master,
+						rounds : rounds,
+						salt  : salt,
+						len   : len
+					})
+
+				}
+			}
 		}
-
-		if ((expectLength - base62.length) === -1 ) {
-			groups.tosmall.push( base10 + " " + base62 + " " + expectLength )
-		}
-		if ((expectLength - base62.length) === +1 ) {
-			groups.tobig.push( base10 + " " + base62 + " " + expectLength )
-		}
-
-
-		//console.assert(base62.length - expectLength > 1)
 	}
 
-	console.dir(groups)
+
 
 } )()
 
