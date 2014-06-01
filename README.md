@@ -54,9 +54,9 @@ keys to base62.
 
 For more information on PBKDF2 see the following resources:
 
-* (https://en.wikipedia.org/wiki/PBKDF2)[Wikipedia Page]
+* [Wikipedia Page](https://en.wikipedia.org/wiki/PBKDF2)
 
-* (http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf)[NIST Recommendations]
+* [NIST Recommendations](http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf)
 
 #### - Master Password
 
