@@ -52,6 +52,8 @@ Password-Based Key Derivation Function 2 (PBKDF2); all polonium adds is
 a method of gathering command-line arguments, calculating arguments and
 converting the derived keys to base62.
 
+http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf
+
 #### - Master Password
 
 You must not use your master password anywhere it may be compromised; if your
@@ -74,11 +76,12 @@ Modern GPU-based cracking can make billions of attempts a day at password cracki
 passwords made by secure hashing algorithms can be cracked quickly. Polonium, or more accurately PBKDF2,
 uses key-stretching to slow down brute force attacks.
 
-High iteration counts wastes the attackers time and raises
-their electric bill, so polonium defaults to 1,000,000 iterations.
 
- If this is too hard on your battery / device,  set polonium to a cosy
-200,000 iterations.
+High iteration counts waste the attacker's time and raises their electric bill, so polonium
+spitefully defaults to a costly 1,000,000 iterations.
+
+If this is too hard on your battery / device, set polonium to a cosy number of
+iteration 200,000 iterations.
 
 #### - Password Encoding
 
