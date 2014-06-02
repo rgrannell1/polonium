@@ -13,8 +13,30 @@ master password.
 
 ### Requirements
 
+* Ubuntu, or possibly another Linux or UNIX. (tested on Ubuntu 13.10)
+* Node.js >= v0.10.28
+* Docopt
+
 ### Installation
 
+#### - Dependencies
+
+To install node.js on Ubuntu use
+
+```
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+```
+
+The command line parser docopt is also required by bismuth
+
+```
+sudo npm install -g docopt
+```
+
+#### - Polonium
+ 
 First, grab the repository from Github.
 
 ```
