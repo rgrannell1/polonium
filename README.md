@@ -31,10 +31,12 @@ sudo apt-get update
 sudo apt-get install nodejs
 ```
 
-The command line parser docopt is also required by bismuth
+Polonium depends on the following libraries:
 
 ```
 sudo npm install -g docopt
+sudo npm install -g prompt
+sudo npm install -g bignum
 ```
 
 #### - Polonium
