@@ -16,6 +16,8 @@ master password.
 * Ubuntu, or possibly another Linux or UNIX. (tested on Ubuntu 13.10)
 * Node.js >= v0.10.28
 * Docopt
+* Prompt
+* Bignum
 
 ### Installation
 
@@ -36,7 +38,7 @@ sudo npm install -g docopt
 ```
 
 #### - Polonium
- 
+
 First, grab the repository from Github.
 
 ```
