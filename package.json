@@ -1,0 +1,14 @@
+{
+	"name":
+		"polonium",
+	"version":
+		"0.1.0",
+	"description":
+		"Polonium is a stateless password manager.",
+	"scripts": {
+		"test": "node test/all.js"
+	},
+	"devDependencies": {
+		"test": ">=0.0.5"
+	}
+}
