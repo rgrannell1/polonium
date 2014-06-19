@@ -1,6 +1,8 @@
 Polonium
 ========
 
+<img src="polonium.gif"> </img>
+
 Polonium is a stateless password manager that creates
 & retrieves passwords without storing them in a database.
 The advantages to this approach are obvious; your database can't be
