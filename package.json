@@ -11,5 +11,9 @@
 	"devDependencies": {
 		"test": ">=0.0.5"
 	},
+	"dependencies": {
+		"prompt": "*",
+		"bignum": "*"
+	},
 	"main": "lib/polonium"
 }
