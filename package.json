@@ -10,5 +10,6 @@
 	},
 	"devDependencies": {
 		"test": ">=0.0.5"
-	}
+	},
+	"main": "lib/polonium"
 }
