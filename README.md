@@ -1,4 +1,4 @@
-Polonium
+Polonium v0.2.1
 ========
 
 <img src="polonium.gif"> </img>
