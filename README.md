@@ -21,7 +21,9 @@ master password.
 * Prompt
 * Bignum
 
-### Installation
+--------------------------------
+
+### Linux Installation
 
 #### - Dependencies
 
@@ -79,6 +81,37 @@ and
 polo get facebook
 ```
 
+--------------------------------
+
+### Windows Installation *
+
+#### - Dependencies
+
+Get node.js through an [installer](http://nodejs.org/dist/v0.10.31/x64/node.exe) or your preferred method.
+
+NPM should be bundled with node, so run the following from your terminal to globally install the 
+required modules:
+
+```
+npm install -g docopt
+npm install -g prompt
+npm install -g bignum
+```
+
+#### - Polonium
+
+Download and unzip [polonium](https://github.com/rgrannell1/polonium/archive/master.zip) from github. The 
+file `lib/polonium.js` is directly executable by node.js, but to make life easier you should set up an environmental
+variable aliasing the path to polonium as 'polo'.
+
+This can be done using the following GUI:
+
+`My Computer -> Properties -> Advanced System Settings -> Environmental Variables`
+
+Click `New`, and give 'polo' as the variable name and the full path to lib/polonium.js as the value.
+
+--------------------------------
+
 ### Details
 
 Polonium is a shallow wrapper around node.js's implementation of
@@ -133,6 +166,10 @@ Polonium passwords only have *application* specific salts, not user-specific sal
 Two users that share a salt ('facebook') and master password ('password123') will share
 the same output password. Not every website will salt passwords properly, so use a
 unique master password.
+
+
+* Currently untested.
+
 
 ### Licence
 
