@@ -110,6 +110,18 @@ This can be done using the following GUI:
 
 Click `New`, and give 'polo' as the variable name and the full path to lib/polonium.js as the value.
 
+Now you can test the program by running the following from your terminal:
+
+```
+polo create facebook
+```
+
+and
+
+```
+polo get facebook
+```
+
 --------------------------------
 
 ### Details
