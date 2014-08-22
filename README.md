@@ -15,7 +15,7 @@ master password.
 
 ### Requirements
 
-* Ubuntu, or possibly another Linux or UNIX. (tested on Ubuntu 13.10)
+* Ubuntu (possibly another Linux or UNIX), or Windows.
 * Node.js >= v0.10.28
 * Docopt
 * Prompt
