@@ -89,7 +89,7 @@ polo get facebook
 
 Get node.js through an [installer](http://nodejs.org/dist/v0.10.31/x64/node.exe) or your preferred method.
 
-NPM should be bundled with node, so run the following from your terminal to globally install the 
+NPM should be bundled with node, so run the following from your terminal to globally install the
 required modules:
 
 ```
@@ -100,7 +100,7 @@ npm install -g bignum
 
 #### - Polonium
 
-Download and unzip [polonium](https://github.com/rgrannell1/polonium/archive/master.zip) from github. The 
+Download and unzip [polonium](https://github.com/rgrannell1/polonium/archive/master.zip) from github. The
 file `lib/polonium.js` is directly executable by node.js, but to make life easier you should set up an environmental
 variable aliasing the path to polonium as 'polo'.
 
