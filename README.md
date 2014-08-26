@@ -55,21 +55,13 @@ cd polonium
 Run the following command.
 
 ```
+
+echo alias polo=SOMETHING >> ~/.bashrc && . ~/.bashrc
+
 sudo nano ~/.bashrc
-```
-add the line,
+``
 
-```
-alias polo=path/to/polonium.py
-```
-
-Run
-
-```
-. ~/.bashrc
-```
-
-and you're ready to go. Now you can test the program with
+to alias the full path to polonium as 'polo'. Now you can test the program with
 
 ```
 polo create facebook
