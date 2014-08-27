@@ -70,9 +70,6 @@ over_('len', 'base')
 	function (len, base) {
 		const entropy = entropyOf(len, base)
 		return is.number(entropy)  && entropy === entropy
-	},
-	function (len, base) {
-		return entropyOf(len, base) > 0
 	}
 )
 
