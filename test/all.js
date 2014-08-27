@@ -24,7 +24,8 @@ over_('master', 'salt')
 .describe('the correct length password is always returned.')
 .holdsWhen_(
 	function (master, salt) {
-		return is.string(master) && is.string(salt) && master.length * salt.length > 0
+		return is.string(master) && is.string(salt) &&
+			master.length * salt.length > 0
 	},
 	function (master, salt) {
 
@@ -52,3 +53,27 @@ over_('master', 'salt')
 )
 
 .run(10)
+
+
+
+
+
+over_('len', 'base')
+
+.describe('entropyOf always returns a non-nan, positive number.')
+.holdsWhen_(
+	function (len, base) {
+		return is.number(len) && is.number(base) &&
+			len > 0 && base > 0 &&
+			len === len && base === base
+	},
+	function (len, base) {
+		const entropy = entropyOf(len, base)
+		return is.number(entropy)  && entropy === entropy
+	},
+	function (len, base) {
+		return entropyOf(len, base) > 0
+	}
+)
+
+.run()
