@@ -45,20 +45,13 @@ sudo npm install -g bignum
 
 #### - Polonium
 
-First, grab the repository from Github.
+To install polonium simply use wget to grab the installer script from github.
 
 ```bash
-git clone https://github.com/rgrannell1/polonium
-cd polonium
+wget -q -O - https://github.com/rgrannell1/polonium/blob/master/install.sh | bash
 ```
 
-Run the following command.
-
-```bash
-echo alias polo=$(pwd -P)/lib/polonium.js >> ~/.bashrc && . ~/.bashrc
-```
-
-to alias the full path to polonium as 'polo'. Now you can test the program with
+To test polonium use
 
 ```
 polo create facebook
