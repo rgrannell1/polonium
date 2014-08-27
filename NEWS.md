@@ -1,7 +1,28 @@
 
+Polonium v0.3.1
+----------------------------------------------------------------
+Date: 2014 August 27
+
+ENHANCMENTS:
+
+* Made it much easier to install polonium on Ubuntu.
+
+PACKAGE-INTERNALS:
+
+* Seperated polonium's main function from it's docopt interface, to
+help transition to using this package as a dependency for polonium-gui.
+
+* Started adding unit tests for polonium.
+
+
+
+
+
+
+
 Polonium v0.2.1
 ----------------------------------------------------------------
-Date: 2014 August 2
+Date: 2014 August 22
 
 ENHANCMENTS:
 
