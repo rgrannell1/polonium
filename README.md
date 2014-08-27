@@ -48,7 +48,7 @@ sudo npm install -g bignum
 To install polonium simply use wget to grab the installer script from github.
 
 ```bash
-wget -q -O - https://github.com/rgrannell1/polonium/blob/master/install.sh | bash
+wget -q -O - https://raw.githubusercontent.com/rgrannell1/polonium/master/install.sh | bash
 ```
 
 To test polonium use
