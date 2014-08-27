@@ -13,7 +13,9 @@
 	},
 	"dependencies": {
 		"prompt": "*",
-		"bignum": "*"
+		"bignum": "*",
+		"jCheck": "rgrannell1/jCheck",
+		"is": "rgrannell1/is"
 	},
 	"main": "lib/polonium"
 }
