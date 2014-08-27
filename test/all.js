@@ -1,2 +1,54 @@
 #!/usr/bin/env node
 
+const deriveKeys  = require('../lib/derive-keys')
+const entropyOf   = require('../lib/entropy-of')
+const getPassword = require('../lib/get-password')
+
+
+const jCheck     = require('jCheck')
+const is         = require('is')
+
+const over       = jCheck.over
+const over_      = jCheck.over_
+const describe   = jCheck.describe
+const holdsWhen  = jCheck.holdsWhen
+const holdsWhen_ = jCheck.holdsWhen_
+const run        = jCheck.run
+
+
+
+
+
+over_('master', 'salt')
+
+.describe('the correct length password is always returned.')
+.holdsWhen_(
+	function (master, salt) {
+		return is.string(master) && is.string(salt) && master.length * salt.length > 0
+	},
+	function (master, salt) {
+
+		/*
+			TODO REMOVE THIS CRAP
+
+			jCheck currently needs every predicate to match to produce
+			a test case, and expecting four predicates to be true of random variables
+			at once doesn't work. For now, generate the easier random variables - the numbers -
+			inside the test.
+		*/
+
+		const rounds = Math.floor(Math.random() * 1000)
+		const len    = Math.floor(Math.random() * 1000)
+
+		const key = deriveKeys({
+			master: master,
+			salt  : salt,
+			rounds: rounds,
+			len   : len
+		})
+
+		return key.length === len
+	}
+)
+
+.run(10)
