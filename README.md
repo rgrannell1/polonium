@@ -47,19 +47,16 @@ sudo npm install -g bignum
 
 First, grab the repository from Github.
 
-```
+```bash
 git clone https://github.com/rgrannell1/polonium
 cd polonium
 ```
 
 Run the following command.
 
+```bash
+echo alias polo=$(pwd -P)/lib/polonium.js >> ~/.bashrc && . ~/.bashrc
 ```
-
-echo alias polo=SOMETHING >> ~/.bashrc && . ~/.bashrc
-
-sudo nano ~/.bashrc
-``
 
 to alias the full path to polonium as 'polo'. Now you can test the program with
 
