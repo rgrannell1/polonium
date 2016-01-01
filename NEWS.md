@@ -1,4 +1,29 @@
 
+Polonium v0.4.1
+----------------------------------------------------------------
+Date: 2015 December 31
+
+ENHANCMENTS:
+
+* Ported some code to use ES6 features.
+
+* Updated package structure.
+
+* Code now uses strict-mode.
+
+* Minor updates to documentation.
+
+* Added explicit npm version dependencies.
+
+* Added (docker) installation testing.
+
+* Added recommeded fields to package.json
+
+* Fixed (accidental?) use of global variables.
+
+
+
+
 Polonium v0.3.1
 ----------------------------------------------------------------
 Date: 2014 August 27

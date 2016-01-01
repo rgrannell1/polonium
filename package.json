@@ -1,10 +1,21 @@
 {
-	"name":
-		"polonium",
-	"version":
-		"0.3.1",
-	"description":
-		"Polonium is a stateless password manager.",
+	"name":        "polonium",
+	"version":     "0.4.1",
+
+	"bin": {
+		"polo": "lib/polonium.js"
+	},
+
+	"repository": {
+		"type": "git",
+		"url":  "https://github.com/rgrannell1/polonium.git"
+	},
+
+	"description": "Polonium is a stateless password manager.",
+	"engines": {
+		"node": ">=5.0.0",
+		"npm":  ">=3.3.7"
+	},
 	"scripts": {
 		"test": "node test/all.js"
 	},
@@ -12,10 +23,11 @@
 		"test": ">=0.0.5"
 	},
 	"dependencies": {
-		"prompt": "*",
-		"bignum": "*",
-		"jCheck": "rgrannell1/jCheck",
-		"is": "rgrannell1/is"
+		"prompt": ">=0.2.14",
+		"bignum": ">=0.11.0",
+		"is":     "rgrannell1/is",
+		"jCheck": "rgrannell1/jCheck"
 	},
-	"main": "lib/polonium"
+	"main":    "lib/polonium",
+	"license": "MIT"
 }

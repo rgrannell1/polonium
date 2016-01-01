@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
-const deriveKeys  = require('../lib/derive-keys')
-const entropyOf   = require('../lib/entropy-of')
-const getPassword = require('../lib/get-password')
+const deriveKeys         = require('../lib/derive-keys')
+const shannonEntropyOf   = require('../lib/shannon-entropy-of')
+const getPassword        = require('../lib/get-password')
 
 
-const jCheck     = require('jCheck')
-const is         = require('is')
+const jCheck             = require('jCheck')
+const is                 = require('is')
 
-const over       = jCheck.over
-const over_      = jCheck.over_
-const describe   = jCheck.describe
-const holdsWhen  = jCheck.holdsWhen
-const holdsWhen_ = jCheck.holdsWhen_
-const run        = jCheck.run
+const over               = jCheck.over
+const over_              = jCheck.over_
+const describe           = jCheck.describe
+const holdsWhen          = jCheck.holdsWhen
+const holdsWhen_         = jCheck.holdsWhen_
+const run                = jCheck.run
 
 
 
@@ -38,8 +38,8 @@ over_('master', 'salt')
 			inside the test.
 		*/
 
-		const rounds = Math.floor(Math.random() * 1000)
-		const len    = Math.floor(Math.random() * 1000)
+		const rounds = Math.floor(Math.random( ) * 1000)
+		const len    = Math.floor(Math.random( ) * 1000)
 
 		const key = deriveKeys({
 			master: master,
@@ -68,9 +68,9 @@ over_('len', 'base')
 			len === len && base === base
 	},
 	function (len, base) {
-		const entropy = entropyOf(len, base)
+		const entropy = shannonEntropyOf(len, base)
 		return is.number(entropy)  && entropy === entropy
 	}
 )
 
-.run()
+.run( )
