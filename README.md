@@ -27,7 +27,7 @@ master password.
 
 #### - Dependencies
 
-To install node.js on Ubuntu use
+To install node.js on Ubuntu use:
 
 ```
 sudo add-apt-repository ppa:chris-lea/node.js
@@ -35,20 +35,12 @@ sudo apt-get update
 sudo apt-get install nodejs
 ```
 
-Polonium depends on the following libraries:
-
-```
-sudo npm install -g docopt
-sudo npm install -g prompt
-sudo npm install -g bignum
-```
-
 #### - Polonium
 
-To install polonium simply use wget to grab the installer script from github.
+To install polonium quickly, use:
 
 ```bash
-wget -q -O - https://raw.githubusercontent.com/rgrannell1/polonium/master/install.sh | bash
+git clone https://github.com/rgrannell1/polonium.git && cd polonium && npm install -g
 ```
 
 To test polonium use
@@ -71,28 +63,17 @@ polo get facebook
 
 Get node.js through an [installer](http://nodejs.org/dist/v0.10.31/x64/node.exe) or your preferred method.
 
-NPM should be bundled with node, so run the following from your terminal to globally install the
-required modules:
-
-```
-npm install -g docopt
-npm install -g prompt
-npm install -g bignum
-```
-
 #### - Polonium
 
-Download and unzip [polonium](https://github.com/rgrannell1/polonium/archive/master.zip) from github. The
-file `lib/polonium.js` is directly executable by node.js, but to make life easier you should set up an environmental
-variable aliasing the path to polonium as 'polo'.
+Run the following commands through Powershell:
 
-This can be done using the following GUI:
+```
+git clone https://github.com/rgrannell1/polonium.git
+cd polonium
+npm install -g
+```
 
-`My Computer -> Properties -> Advanced System Settings -> Environmental Variables`
-
-Click `New`, and give 'polo' as the variable name and the full path to lib/polonium.js as the value.
-
-Now you can test the program by running the following from your terminal:
+To test polonium use
 
 ```
 polo create facebook
@@ -121,9 +102,9 @@ For more information on PBKDF2 see the following resources:
 
 #### - Master Password
 
-You must not use your master password anywhere it may be compromised; if your
-master password is compromised, all polonium-derived passwords will also be
-cracked.
+You must not use your master password anywhere it might be compromised; if your
+master password is known to an attacker, all polonium-derived passwords can also be
+cracked easily.
 
 A good, XKCD-approved method of making a master password is to take you favourite large
 dictionary - for example the Oxford English Dictionary - and choose five
@@ -144,7 +125,7 @@ uses key-stretching to slow down brute force attacks.
 High iteration counts waste the attacker's time and raises their electric bill, so polonium
 spitefully defaults to a costly 1,000,000 iterations.
 
-If this is too hard on your battery / device, set polonium to a number of iteration
+If this is too hard on your battery / device, set poloniums iterations to a number
 preferably above 200,000 iterations.
 
 #### - Password Encoding
@@ -158,8 +139,7 @@ exceed the recommended minimum of 80-bits of entropy per password.
 
 Polonium passwords only have *application* specific salts, not user-specific salts.
 Two users that share a salt ('facebook') and master password ('password123') will share
-the same output password. Not every website will salt passwords properly, so use a
-unique master password.
+the same output password. For this and many other reasons, **use a unique master password.**
 
 
 * Currently untested.
