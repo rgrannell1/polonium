@@ -20,7 +20,9 @@
 		"test": "node test/all.js"
 	},
 	"devDependencies": {
-		"test": ">=0.0.5"
+		"test": ">=0.0.5",
+		"eslint": "^1.9.0",
+		"babel-eslint": ">=4.1.4"
 	},
 	"dependencies": {
 		"prompt": ">=0.2.14",

@@ -141,7 +141,6 @@ Polonium passwords only have *application* specific salts, not user-specific sal
 Two users that share a salt ('facebook') and master password ('password123') will share
 the same output password. For this and many other reasons, **use a unique master password.**
 
-
 * Currently untested.
 
 
