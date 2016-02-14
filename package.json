@@ -1,35 +1,35 @@
 {
-	"name":        "polonium",
-	"version":     "0.4.1",
-
-	"bin": {
-		"polo": "lib/polonium.js"
-	},
-
-	"repository": {
-		"type": "git",
-		"url":  "https://github.com/rgrannell1/polonium.git"
-	},
-
-	"description": "Polonium is a stateless password manager.",
-	"engines": {
-		"node": ">=5.0.0",
-		"npm":  ">=3.3.7"
-	},
-	"scripts": {
-		"test": "node test/all.js"
-	},
-	"devDependencies": {
-		"test": ">=0.0.5",
-		"eslint": "^1.9.0",
-		"babel-eslint": ">=4.1.4"
-	},
-	"dependencies": {
-		"prompt": ">=0.2.14",
-		"bignum": ">=0.11.0",
-		"is":     "rgrannell1/is",
-		"jCheck": "rgrannell1/jCheck"
-	},
-	"main":    "lib/polonium",
-	"license": "MIT"
+  "name": "polonium",
+  "version": "0.4.1",
+  "bin": {
+    "polo": "lib/polonium.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgrannell1/polonium.git"
+  },
+  "description": "Polonium is a stateless password manager.",
+  "engines": {
+    "node": ">=5.0.0",
+    "npm": ">=3.3.7"
+  },
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "devDependencies": {
+    "test": ">=0.0.5",
+    "eslint": "^1.9.0",
+    "babel-eslint": ">=4.1.4"
+  },
+  "dependencies": {
+    "big-integer": "^1.6.11",
+    "bignum": ">=0.11.0",
+    "bignumber": "^1.1.0",
+    "bignumber.js": "^2.1.4",
+    "is": "rgrannell1/is",
+    "jCheck": "rgrannell1/jCheck",
+    "prompt": ">=0.2.14"
+  },
+  "main": "lib/polonium",
+  "license": "MIT"
 }
