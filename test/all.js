@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const deriveKeys         = require('../lib/derive-keys')
-const shannonEntropyOf   = require('../lib/shannon-entropy-of')
-const getPassword        = require('../lib/get-password')
+const deriveKeys         = require('../lib/app/derive-keys')
+const shannonEntropyOf   = require('../lib/commons/shannon-entropy-of')
+const getPassword        = require('../lib/app/get-password')
 
 
 const jCheck             = require('jCheck')
