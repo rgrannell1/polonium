@@ -2,7 +2,7 @@
   "name": "polonium",
   "version": "0.4.1",
   "bin": {
-    "polo": "lib/cli/cli.js"
+    "polo": "./lib/cli/cli.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,5 @@
     "jCheck": "rgrannell1/jCheck",
     "prompt": ">=0.2.14"
   },
-  "main": "lib/polonium",
   "license": "MIT"
 }
