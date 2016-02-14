@@ -2,7 +2,7 @@
   "name": "polonium",
   "version": "0.4.1",
   "bin": {
-    "polo": "lib/polonium.js"
+    "polo": "lib/cli/cli.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,6 @@
   },
   "dependencies": {
     "big-integer": "^1.6.11",
-    "bignum": ">=0.11.0",
-    "bignumber": "^1.1.0",
-    "bignumber.js": "^2.1.4",
     "is": "rgrannell1/is",
     "jCheck": "rgrannell1/jCheck",
     "prompt": ">=0.2.14"
