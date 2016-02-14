@@ -1,4 +1,22 @@
 
+Polonium v0.5.1
+----------------------------------------------------------------
+Date: 2015 February 14
+
+ENHANCMENTS:
+
+* Ported more code to use ES6
+
+* Reduces poor code factoring and fixed poor folder structure.
+
+* Added short options for length and rounds arguments.
+
+* Removed (node-gyp depending) bignum package, refactoring to use a JS-only package.
+
+
+
+
+
 Polonium v0.4.1
 ----------------------------------------------------------------
 Date: 2015 December 31
