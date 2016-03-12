@@ -31,6 +31,6 @@ RUN n latest
 COPY . /src
 
 WORKDIR /src
-RUN npm link && npm install --global --only=dev
+RUN npm install --global --only=dev
 
 CMD ["bash", "test/install-test.sh"]
