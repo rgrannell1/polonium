@@ -1,22 +1,29 @@
 
+NODE           = node
 DOCKER         = docker
-CONTAINER_NAME = polonium
+CONTAINER_NAME = rpgen
 
 ESLINT         = ./node_modules/.bin/eslint
 ESLINT_FLAGS   = --config config/eslint.json
 
+TEST_INSTALL_CONTAINER = $(CONTAINER_NAME)-test-install
 
 
 
 
-docker-build:
-	$(DOCKER) build --tag=$(CONTAINER_NAME) .
 
-docker-cleanbuild:
-	$(DOCKER) build --no-cache=true --tag=$(CONTAINER_NAME) .
+docker-test-install-build:
+	$(DOCKER) build --tag=$(TEST_INSTALL_CONTAINER) -f dockerfiles/test-install .
 
-docker-run:
-	$(DOCKER) run $(CONTAINER_NAME)
+docker-test-install-cleanbuild:
+	$(DOCKER) build --no-cache=true --tag=$(TEST_INSTALL_CONTAINER) -f dockerfiles/test-install .
+
+docker-test-install-run:
+	$(DOCKER) run $(TEST_INSTALL_CONTAINER)
+
+
+
+
 
 eslint:
 	$(ESLINT) $(ESLINT_FLAGS) lib

@@ -22,7 +22,7 @@ RUN npm install --global \
 
 
 
-RUN n 5.8.0
+RUN n latest
 
 
 

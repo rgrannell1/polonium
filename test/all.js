@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
-const deriveKeys         = require('../lib/app/derive-keys')
-const shannonEntropyOf   = require('../lib/commons/shannon-entropy-of')
-const getPassword        = require('../lib/app/get-password')
+const deriveKeys       = require('../lib/app/derive-keys')
+const shannonEntropyOf = require('../lib/commons/shannon-entropy-of')
+const getPassword      = require('../lib/app/get-password')
 
 
-const jCheck             = require('jCheck')
-const is                 = require('is')
+const jCheck           = require('jCheck')
+const is               = require('is')
 
-const over               = jCheck.over
-const over_              = jCheck.over_
-const describe           = jCheck.describe
-const holdsWhen          = jCheck.holdsWhen
-const holdsWhen_         = jCheck.holdsWhen_
-const run                = jCheck.run
+const over             = jCheck.over
+const over_            = jCheck.over_
+const describe         = jCheck.describe
+const holdsWhen        = jCheck.holdsWhen
+const holdsWhen_       = jCheck.holdsWhen_
+const run              = jCheck.run
 
 
 
