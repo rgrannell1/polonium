@@ -8,6 +8,10 @@ RUN apt-get update && apt-get install -y \
 	build-essential && \
 	rm -rf /var/lib/apt/lists/*
 
+
+
+
+
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN npm cache clean -f
@@ -27,8 +31,6 @@ RUN n stable
 COPY . /src
 
 WORKDIR /src
-RUN npm install -g
-
-EXPOSE 8025
+RUN npm link && npm install --global --only=dev
 
 CMD ["bash", "test/install-test.sh"]
