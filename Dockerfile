@@ -2,10 +2,10 @@
 FROM ubuntu:15.10
 
 RUN apt-get update && apt-get install -y \
-	npm \
-	curl \
-	git \
-	build-essential && \
+	npm                                  \
+	curl                                 \
+	git                                  \
+	build-essential &&                   \
 	rm -rf /var/lib/apt/lists/*
 
 
@@ -15,14 +15,14 @@ RUN apt-get update && apt-get install -y \
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN npm cache clean -f
-RUN npm install -g \
+RUN npm install --global \
 	n
 
 
 
 
 
-RUN n stable
+RUN n 5.8.0
 
 
 
