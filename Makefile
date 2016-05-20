@@ -1,7 +1,7 @@
 
 NODE           = node
 DOCKER         = docker
-CONTAINER_NAME = rpgen
+CONTAINER_NAME = polonium
 
 ESLINT         = ./node_modules/.bin/eslint
 ESLINT_FLAGS   = --config config/eslint.json
@@ -21,9 +21,13 @@ docker-test-install-cleanbuild:
 docker-test-install-run:
 	$(DOCKER) run $(TEST_INSTALL_CONTAINER)
 
-
-
-
-
 eslint:
 	$(ESLINT) $(ESLINT_FLAGS) lib
+
+install: snap
+	cd snapcraft && snap install polonium_* && cd ..
+
+snap: FORCE
+	cd snapcraft && snapcraft clean && snapcraft snap && cd ..
+
+FORCE:
