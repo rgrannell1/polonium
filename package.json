@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "big-integer": "^1.6.11",
+    "colors": "^1.1.2",
     "docopt": "^0.6.2",
     "is": "rgrannell1/is",
     "jCheck": "rgrannell1/jCheck",
