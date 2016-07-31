@@ -1,4 +1,4 @@
-Polonium v0.4.1 [![Build Status](https://travis-ci.org/rgrannell1/polonium.png?branch=master)](https://travis-ci.org/rgrannell1/polonium)
+Polonium v0.5.1 [![Build Status](https://travis-ci.org/rgrannell1/polonium.png?branch=master)](https://travis-ci.org/rgrannell1/polonium)
 ========
 
 <img src="polonium.gif"> </img>
