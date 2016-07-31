@@ -46,13 +46,13 @@ git clone https://github.com/rgrannell1/polonium.git && cd polonium && npm insta
 To test polonium use
 
 ```
-polo create facebook
+polonium create facebook
 ```
 
 and
 
 ```
-polo get facebook
+polonium get facebook
 ```
 
 --------------------------------
@@ -76,13 +76,13 @@ npm install -g
 To test polonium use
 
 ```
-polo create facebook
+polonium create facebook
 ```
 
 and
 
 ```
-polo get facebook
+polonium get facebook
 ```
 
 --------------------------------
