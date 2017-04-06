@@ -27,29 +27,24 @@ Description:
     it uses a deterministic function to create and retrieve passwords; for any particular salt and master password
     it always generates a particular derived password. For example,
 
-        polonium get a (with master password 'a')
+        polonium get google (with master password 'supersolidsecurepassword')
 
-    always generates the new password
+    always generates the derived password
 
-        fXWX6PmmyxtLU2WWl5vx
+        r5PPu6bYdWJEqI8gtLbOYorTnhT
 
     This means that if you remember your master password, the application you use the password for, and any
     additional arguments you pass to polonium you can retrieve your generated passwords.
 
-    Polonium generates base62 alphanumeric passwords. These have higher entropy than standard encodings like
-    base16 and binary, and are more likely to be accepted by a website than base64 passwords.
+    Polonium generates base62 alphanumeric passwords, which are accepted by most websites & are fairly
+    information-dense compared to hex photos.
 
-    When creating a password it is important you create a password with at least 80 bits of entropy,
-    preferably even higher. This makes your generated password resistant to being cracked. The same requirement
-    is even more true of your master password.
+    If you use 'password1' as your master password, your derived passwords will be easy to guess if attackers
+    know the password was made with polonium. If they don't, your derived passwords will still be secure, even
+    though they were made by a bad master password.
 
-    Polonium is a 'garbage-in, garbage-out' program. If you use 'password1' as your master password,
-    your derived passwords will be easy to guess if attackers know the password was made with polonium. If
-    they dont, your derived passwords will still be secure, even though they were made by a bad
-    master password.
-
-    Polonium is intentionally slow; the simplest way to protect passwords from
-    being guessed through exhaustive search is to make each guess slow.
+    Polonium is intentionally slow; the simplest way to protect passwords from being guessed through exhaustive
+    search is to make each guess slow.
 
 Arguments:
     <salt>          A string unique to a particular application or website.
