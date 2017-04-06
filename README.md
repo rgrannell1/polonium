@@ -1,4 +1,4 @@
-Polonium v0.5.1 [![Build Status](https://travis-ci.org/rgrannell1/polonium.png?branch=master)](https://travis-ci.org/rgrannell1/polonium)
+Polonium v0.6.1
 ========
 
 <img src="polonium.gif"> </img>
@@ -16,7 +16,7 @@ master password.
 ### Requirements
 
 * Ubuntu (possibly another Linux or UNIX), or Windows.
-* Node.js >= v0.10.28
+* Node.js >= v7.8.0
 * Docopt
 * Prompt
 * Bignum
@@ -40,7 +40,7 @@ sudo apt-get install nodejs
 To install polonium quickly, use:
 
 ```bash
-git clone https://github.com/rgrannell1/polonium.git && cd polonium && npm install -g
+sudo snap install polonium
 ```
 
 To test polonium use
