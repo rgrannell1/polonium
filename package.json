@@ -2,7 +2,7 @@
   "name": "polonium",
   "version": "0.6.1",
   "bin": {
-    "polo": "./lib/cli/cli.js"
+    "polo": "./src/cli/cli.js"
   },
   "repository": {
     "type": "git",
