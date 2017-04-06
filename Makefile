@@ -13,7 +13,7 @@ eslint:
 	$(ESLINT) $(ESLINT_FLAGS) lib
 
 install: snap
-	cd snapcraft && snap install polonium_* && cd ..
+	cd snapcraft && snap install --dangerous polonium_* && cd ..
 
 snap: FORCE
 	cd snapcraft && snapcraft clean && snapcraft snap && cd ..

@@ -31,6 +31,21 @@ const polonium = rawArgs => {
 		})
 
 	})
+	.then(password => {
+
+		if (args.indices) {
+
+			return args.indices.map(index => {
+				return password.slice(index - 1, index)
+			}).join('')
+
+		} else {
+
+			return password
+
+		}
+
+	})
 	.then(
 		report.password)
 	.catch(
@@ -48,8 +63,16 @@ polonium.preprocess = rawArgs => {
 
 	try {
 
-		args.len    = parseInt(rawArgs['--len'], 10)
-		args.rounds = parseInt(rawArgs['--rounds'], 10)
+		args.len     = parseInt(rawArgs['--len'], 10)
+		args.rounds  = parseInt(rawArgs['--rounds'], 10)
+
+		if (rawArgs['--indices']) {
+
+			args.indices = rawArgs['--indices'].split(/\s*,\s*/g).map(index => {
+				return parseInt(index)
+			})
+
+		}
 
 	} catch (err) {
 
