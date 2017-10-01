@@ -1,6 +1,8 @@
 Polonium v0.6.1
 ========
 
+[![Inline docs](http://inch-ci.org/github/rgrannell1/polonium.svg?branch=master)](http://inch-ci.org/github/rgrannell1/polonium)
+
 <img src="polonium.gif"> </img>
 
 Polonium is a stateless password manager that creates
