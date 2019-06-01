@@ -7,8 +7,10 @@ Polonium v0.6.1
 
 Polonium is a stateless password manager that creates
 & retrieves passwords without storing them in a database.
-The advantages to this approach are obvious; your database can't be
-stolen, and you can get your passwords anywhere you can get polonium.
+The advantages to this approach; 
+
+- your database can't be stolen
+- you can get your passwords anywhere you can get polonium.
 
 Polonium only requires you to remember one master password, from which it
 derives subordinate passwords for your various service logins. Even if these
@@ -17,8 +19,8 @@ master password.
 
 ### Requirements
 
-* Ubuntu (possibly another Linux or UNIX), or Windows.
-* Node.js >= v7.8.0
+* A Linux distribution that supports Snap packages
+* For a manual installation, node.js >= v7.8.0
 
 --------------------------------
 
@@ -35,13 +37,13 @@ sudo snap install polonium
 To test polonium use
 
 ```
-polonium create facebook
+polonium create github
 ```
 
 and
 
 ```
-polonium get facebook
+polonium get github
 ```
 
 --------------------------------
@@ -61,13 +63,13 @@ npm install -g
 To test polonium use
 
 ```
-polonium create facebook
+polonium create github
 ```
 
 and
 
 ```
-polonium get facebook
+polonium get github
 ```
 
 --------------------------------
