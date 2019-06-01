@@ -14,12 +14,15 @@
     "npm": ">=3.3.7"
   },
   "scripts": {
-    "test": "node test/all.js"
+    "test": "node test/all.js",
+    "standard": "npx standard 'src/**'",
+    "standard:fix": "npx standard 'src/**' --fix",
+    "snap:install": "cd snapcraft && snap install --dangerous polonium_* && cd ..",
+    "snap:snap": "cd snapcraft && snapcraft clean && snapcraft snap && cd .."
   },
   "devDependencies": {
-    "test": ">=0.0.5",
-    "eslint": "^1.9.0",
-    "babel-eslint": ">=4.1.4"
+    "standard": "^12.0.1",
+    "test": ">=0.0.5"
   },
   "dependencies": {
     "big-integer": "^1.6.11",

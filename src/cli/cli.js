@@ -1,15 +1,8 @@
 #!/usr/bin/env node
 
-"use strict"
-
-
-
+'use strict'
 
 var packageJson = require('../../package.json')
-
-
-
-
 
 const doc = `
 Usage:
@@ -20,6 +13,10 @@ Usage:
 Version:
 
     v${packageJson.version}
+
+Security Note: 
+    By default, this password uses SHA1 hash digests. This will be changed in future, for the moment please specify a better
+    digest like sha512
 
 Description:
 
@@ -66,14 +63,9 @@ Options:
     --version                    Show the current version number.
 `
 
-
-const docopt   = require('docopt').docopt
+const docopt = require('docopt').docopt
 const polonium = require('../app/polonium.js')
 
-const args     = docopt(doc)
-
-
-
-
+const args = docopt(doc)
 
 polonium(args)
