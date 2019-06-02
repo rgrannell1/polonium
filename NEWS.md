@@ -1,6 +1,14 @@
 
 Polonium v1.0.0
+Date: 2019 June 1
 
+ENHANCEMENTS:
+
+* Added slightly more documentation about the default SHA hash
+
+PACKAGE-INTERNALS:
+
+* Remove Makefile & switched to NPM scripts
 
 Polonium v0.5.1
 ----------------------------------------------------------------

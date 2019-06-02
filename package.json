@@ -30,7 +30,7 @@
     "docopt": "^0.6.2",
     "is": "rgrannell1/is",
     "jCheck": "rgrannell1/jCheck",
-    "polonium-lib": "rgrannell1/polonium-lib",
+    "polonium-lib": "github:rgrannell1/polonium-lib",
     "prompt": "^1.0.0",
     "read": "^1.0.7"
   },
