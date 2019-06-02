@@ -4,7 +4,7 @@
 
 var constants = {
   errorCodes: {
-    MISMATCHED_PASSWORD: 'PLC-000'
+    MISMATCHED_PASSWORD: 'PLC_000'
   },
   display: {
     ENTER_PASSWORD: '[polonium] enter master password:',

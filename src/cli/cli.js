@@ -64,7 +64,7 @@ Options:
 `
 
 const docopt = require('docopt').docopt
-const polonium = require('../app/polonium.js')
+const polonium = require('../app/polonium')
 
 const args = docopt(doc)
 
