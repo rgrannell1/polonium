@@ -40,10 +40,13 @@ polonium.preprocess = rawArgs => {
 
     if (rawArgs['--line']) {
       args.line = true;
-    } else if (rawArgs['--indices']) {
+    }
+    if (rawArgs['--indices']) {
       args.indices = rawArgs['--indices'].split(/\s*,\s*/g).map(index => {
         return parseInt(index)
       })
+    } else {
+      args.indices = null
     }
   } catch (err) {
     args.len = null
