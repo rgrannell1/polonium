@@ -6,15 +6,15 @@ var packageJson = require('../../package.json')
 
 const doc = `
 Usage:
-    polonium create <salt> [-l <num> | --len <num>] [-r <num> | --rounds <num>] [-i <csv> | --indices <csv>] [-d <str> | --digest <str>]
-    polonium get <salt>    [-l <num> | --len <num>] [-r <num> | --rounds <num>] [-i <csv> | --indices <csv>] [-d <str> | --digest <str>]
+    polonium create <salt> [-l <num> | --len <num>] [-r <num> | --rounds <num>] [--line] [-i <csv> | --indices <csv>] [-d <str> | --digest <str>]
+    polonium get <salt>    [-l <num> | --len <num>] [-r <num> | --rounds <num>] [--line] [-i <csv> | --indices <csv>] [-d <str> | --digest <str>]
     polonium (-h | --help | --version)
 
 Version:
 
     v${packageJson.version}
 
-Security Note: 
+Security Note:
     By default, this password uses SHA1 hash digests. This will be changed in future, for the moment please specify a better
     digest like sha512
 
@@ -59,6 +59,7 @@ Options:
                                  to lower this value below 100,000.
     -i <csv>, --indices <csv>     Comma-delimited indices within the password to select. This is included to
                                  make it easy to fetch specific characters from bank passwords etc.
+    --line                       Print each charecter on a new line, with a line-number
     -d <str>, --digest <str>     The password digest to use [default: sha1]
     --version                    Show the current version number.
 `

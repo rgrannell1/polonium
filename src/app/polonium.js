@@ -7,32 +7,24 @@ const plib = require('polonium')
 const report = require('./report')
 const fetchMasterPasswords = require('./fetch-master-password')
 
-const polonium = rawArgs => {
+const polonium = async rawArgs => {
   const args = polonium.preprocess(rawArgs)
 
-  fetchMasterPasswords(args.verifyPassword)
-    .then(password => {
-      return plib.polonium({
-        salt: args.salt,
-        len: args.len,
-        rounds: args.rounds,
-        digest: args.digest,
-        password
-      })
+  try {
+    const masterPassword = await fetchMasterPasswords(args.verifyPassword)
+    const password = await plib.polonium({
+      salt: args.salt,
+      len: args.len,
+      rounds: args.rounds,
+      digest: args.digest,
+      password: masterPassword
     })
-    .then(password => {
-      if (args.indices) {
-        return args.indices.map(index => {
-          return password.slice(index - 1, index)
-        }).join('')
-      } else {
-        return password
-      }
-    })
-    .then(
-      report.password)
-    .catch(
-      report.error)
+
+    return report.password(password, args)
+  } catch (err) {
+    console.log(err)
+    report.error(err)
+  }
 }
 
 polonium.preprocess = rawArgs => {
@@ -46,7 +38,9 @@ polonium.preprocess = rawArgs => {
     args.len = parseInt(rawArgs['--len'], 10)
     args.rounds = parseInt(rawArgs['--rounds'], 10)
 
-    if (rawArgs['--indices']) {
+    if (rawArgs['--line']) {
+      args.line = true;
+    } else if (rawArgs['--indices']) {
       args.indices = rawArgs['--indices'].split(/\s*,\s*/g).map(index => {
         return parseInt(index)
       })
