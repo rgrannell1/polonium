@@ -6,6 +6,8 @@ description: Polonium is a stateless password manager based on PBKDF2
 
 confinement: "strict"
 
+base: core18
+
 apps:
   polonium:
     command: bin/polo
