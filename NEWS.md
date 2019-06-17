@@ -1,14 +1,16 @@
 
 Polonium v1.0.0
-Date: 2019 June 1
+Date: 2019 June 15
 
 ENHANCEMENTS:
 
 * Added slightly more documentation about the default SHA hash
+* Added a `--line` option, which prints each character of a password along with it's indices
 
 PACKAGE-INTERNALS:
 
 * Remove Makefile & switched to NPM scripts
+* Add `base` to snap package
 
 Polonium v0.5.1
 ----------------------------------------------------------------

@@ -1,4 +1,4 @@
-Polonium v0.6.1
+Polonium v1.0.0
 ========
 
 [![Inline docs](http://inch-ci.org/github/rgrannell1/polonium.svg?branch=master)](http://inch-ci.org/github/rgrannell1/polonium)
@@ -7,7 +7,7 @@ Polonium v0.6.1
 
 Polonium is a stateless password manager that creates
 & retrieves passwords without storing them in a database.
-The advantages to this approach; 
+The advantages to this approach;
 
 - your database can't be stolen
 - you can get your passwords anywhere you can get polonium.
