@@ -14,5 +14,5 @@ apps:
 
 parts:
   polonium:
-    source: ".."
+    source: .
     plugin: nodejs
