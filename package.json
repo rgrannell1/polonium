@@ -16,9 +16,7 @@
   "scripts": {
     "test": "node test/all.js",
     "standard": "npx standard 'src/**'",
-    "standard:fix": "npx standard 'src/**' --fix",
-    "snap:install": "cd snapcraft && snap install --dangerous polonium_* && cd ..",
-    "snap:snap": "cd snapcraft && snapcraft clean && snapcraft snap && cd .."
+    "standard:fix": "npx standard 'src/**' --fix"
   },
   "devDependencies": {
     "standard": "^12.0.1",
