@@ -16,3 +16,5 @@ parts:
   polonium:
     source: .
     plugin: nodejs
+    build-packages: ['libcurl4-openssl-dev']
+    stage-packages: ['git']
