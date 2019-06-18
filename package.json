@@ -26,7 +26,6 @@
     "big-integer": "^1.6.11",
     "colors": "^1.1.2",
     "docopt": "^0.6.2",
-    "is": "github:rgrannell1/is",
     "polonium": "github:rgrannell1/polonium-lib",
     "prompt": "^1.0.0",
     "read": "^1.0.7"
