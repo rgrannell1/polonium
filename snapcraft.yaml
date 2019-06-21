@@ -11,6 +11,7 @@ base: core18
 apps:
   polonium:
     command: bin/polo
+    plugs: ['network']
 
 parts:
   polonium:
