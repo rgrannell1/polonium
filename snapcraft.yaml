@@ -4,7 +4,7 @@ version:     v1.0.0
 summary:     Polonium is a stateless password manager based on PBKDF2.
 description: Polonium is a stateless password manager based on PBKDF2
 
-confinement: "strict"
+confinement: strict
 
 base: core18
 
@@ -16,5 +16,5 @@ parts:
   polonium:
     source: .
     plugin: nodejs
-    build-packages: ['libcurl4-openssl-dev']
-    stage-packages: ['git']
+    nodejs-package-manager: npm
+    build-packages: ['libcurl4-openssl-dev', 'git']

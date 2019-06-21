@@ -8,7 +8,7 @@ const error = err => {
 const selectPassword = (string, indices) => {
   return string.split('')
     .map((char, ith) => {
-      return {char, index: ith + 1, ith}
+      return { char, index: ith + 1, ith }
     })
     .filter(data => {
       return indices

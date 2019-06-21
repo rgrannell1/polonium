@@ -39,7 +39,7 @@ polonium.preprocess = rawArgs => {
     args.rounds = parseInt(rawArgs['--rounds'], 10)
 
     if (rawArgs['--line']) {
-      args.line = true;
+      args.line = true
     }
     if (rawArgs['--indices']) {
       args.indices = rawArgs['--indices'].split(/\s*,\s*/g).map(index => {
