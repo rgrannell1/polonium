@@ -31,14 +31,4 @@ const password = (password, args) => {
   }
 }
 
-module.exports = { error, password }
-
-/*
-    let selection = password
-    if (args.indices) {
-      selection = args.indices.map(index => {
-        return password.slice(index - 1, index)
-      }).join('')
-    }
-
-*/
+module.exports = { error, password, selectPassword }

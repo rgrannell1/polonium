@@ -3,3 +3,4 @@ prompt
 node_modules/
 snapcraft/
 *.snap
+.nyc_output
