@@ -1,4 +1,4 @@
-Polonium v1.0.0
+Polonium v1.1.0
 ========
 
 [![Inline docs](http://inch-ci.org/github/rgrannell1/polonium.svg?branch=master)](http://inch-ci.org/github/rgrannell1/polonium)
@@ -130,6 +130,11 @@ the same output password. For this and many other reasons, **use a unique master
 
 * Currently untested.
 
+### Building
+
+```
+sudo snapcraft build --use-lxd
+```
 
 ### Licence
 

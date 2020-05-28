@@ -7,6 +7,13 @@ const plib = require('polonium')
 const report = require('./report')
 const fetchMasterPasswords = require('./fetch-master-password')
 
+/**
+ * Run the Polonium app.
+ *
+ * @param {Object} rawArgs processed CLI arguments.
+ *
+ * @returns {undefined}
+ */
 const polonium = async rawArgs => {
   const args = polonium.preprocess(rawArgs)
 
@@ -22,11 +29,17 @@ const polonium = async rawArgs => {
 
     return report.password(password, args)
   } catch (err) {
-    console.log(err)
     report.error(err)
   }
 }
 
+/**
+ * Preprocess CLI arguments
+ *
+ * @param {Object} rawArgs unprocessed CLI arguments.
+ *
+ * @returns {Object} processed CLI arguments.
+ */
 polonium.preprocess = rawArgs => {
   const args = {
     salt: rawArgs['<salt>'],
@@ -37,10 +50,16 @@ polonium.preprocess = rawArgs => {
   try {
     args.len = parseInt(rawArgs['--len'], 10)
     args.rounds = parseInt(rawArgs['--rounds'], 10)
+  } catch (err) {
+    args.len = null
+    args.rounds = null
+  }
 
-    if (rawArgs['--line']) {
-      args.line = true
-    }
+  if (rawArgs['--line']) {
+    args.line = true
+  }
+
+  try {
     if (rawArgs['--indices']) {
       args.indices = rawArgs['--indices'].split(/\s*,\s*/g).map(index => {
         return parseInt(index)
@@ -49,8 +68,7 @@ polonium.preprocess = rawArgs => {
       args.indices = null
     }
   } catch (err) {
-    args.len = null
-    args.rounds = null
+    args.indices = null
   }
 
   return args

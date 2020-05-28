@@ -1,4 +1,10 @@
 
+Polonium v1.1.0
+Date: 2020 March 29
+
+ENHANCEMENTS:
+* Updated packages
+
 Polonium v1.0.0
 Date: 2019 June 15
 

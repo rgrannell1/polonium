@@ -1,11 +1,24 @@
 
-'use strict'
+const report = {}
 
-const error = err => {
+/**
+ * Report an error
+ *
+ * @param {Error} err an application error
+ */
+report.error = err => {
   console.error(err.message)
 }
 
-const selectPassword = (string, indices) => {
+/**
+ * Select indices from a password.
+ *
+ * @param {string} string the password to substring
+ * @param {Array<number>} indices index data
+ *
+ * @returns {Array<Object>} an array of character data.
+ */
+report.selectPassword = (string, indices) => {
   return string.split('')
     .map((char, ith) => {
       return { char, index: ith + 1, ith }
@@ -17,7 +30,14 @@ const selectPassword = (string, indices) => {
     })
 }
 
-const password = (password, args) => {
+/**
+ * Report the generated password.
+ *
+ * @param {string} password the password to report.
+ * @param {Object} args CLI arguments.
+ *
+ */
+report.password = (password, args) => {
   const selection = selectPassword(password, args.indices)
 
   if (args.line) {
@@ -31,4 +51,4 @@ const password = (password, args) => {
   }
 }
 
-module.exports = { error, password, selectPassword }
+module.exports = report

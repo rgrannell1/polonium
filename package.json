@@ -1,6 +1,7 @@
 {
   "name": "polonium-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "author": "Róisín Grannell <r.grannell2@gmail.com>",
   "bin": {
     "polo": "./src/cli/cli.js"
   },

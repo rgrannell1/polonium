@@ -6,6 +6,9 @@ const stream = require('stream')
 
 const constants = require('../commons/constants')
 
+/**
+ * Create a dummy writeable stream.
+ */
 const mutedStdout = stream.Writable({
   write: (chunk, encoding, callback) => {
     callback()
@@ -18,8 +21,16 @@ const reader = readline.createInterface({
   terminal: true
 })
 
+/**
+ * Read and possibly verify a password.
+ *
+ * @param {boolean} verify should the password be verified?
+ *
+ * @returns {Promise<string>} a password.
+ */
 const fetchMasterPassword = verify => {
   return new Promise((resolve, reject) => {
+    // -- prompt for a password.
     console.log(constants.display.ENTER_PASSWORD)
 
     reader.question('', firstPassword => {
