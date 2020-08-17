@@ -126,155 +126,90 @@ the same output password. For this and many other reasons, **use a unique master
 
 ## Changelog
 
+### v1.2.0 [ 2020 August 17 ]
 
-Polonium v1.2.0
-----------------------------------------------------------------
-Date: 2020 August 17
+**ENHANCEMENTS**
+- Added group option to group passwords into discreet groups of characters.
 
-ENHANCEMENTS:
-* Added group option to group passwords into discreet groups of characters.
+### v1.1.0 [ 2020 March 29 ]
 
-
-
-Polonium v1.1.0
-----------------------------------------------------------------
-Date: 2020 March 29
-
-ENHANCEMENTS:
+**ENHANCEMENTS:**
 * Updated packages
 
-Polonium v1.0.0
-Date: 2019 June 15
+### v1.0.0 [ 2019 June 15 ]
 
-ENHANCEMENTS:
+**ENHANCEMENTS:**
 
-* Added slightly more documentation about the default SHA hash
-* Added a `--line` option, which prints each character of a password along with it's indices
+- Added slightly more documentation about the default SHA hash
+- Added a `--line` option, which prints each character of a password along with it's indices
 
-PACKAGE-INTERNALS:
+**PACKAGE-INTERNALS:**
 
-* Remove Makefile & switched to NPM scripts
-* Add `base` to snap package
+- Remove Makefile & switched to NPM scripts
+- Add `base` to snap package
 
-Polonium v0.5.1
-----------------------------------------------------------------
-Date: 2015 February 14
+### v0.5.1 [ 2015 February 14 ]
 
-ENHANCMENTS:
+**ENHANCMENTS:**
 
-* Ported more code to use ES6
+- Ported more code to `use ES6
+- Reduces poor code factoring and fixed poor folder `structure.
+- Added short options for length and rounds `arguments.
+- Removed (node-gyp depending) bignum package, refactoring to use a JS-only `package.
 
-* Reduces poor code factoring and fixed poor folder structure.
-
-* Added short options for length and rounds arguments.
-
-* Removed (node-gyp depending) bignum package, refactoring to use a JS-only package.
-
-
-
-
-
-Polonium v0.4.1
-----------------------------------------------------------------
-Date: 2015 December 31
+### v0.4.1 [ 2015 December 31 ]
 
 ENHANCMENTS:
 
-* Ported some code to use ES6 features.
+- Ported some code to use ES6 features.
+- Updated package structure.
+- Code now uses strict-mode.
+- Minor updates to documentation.
+- Added explicit npm version dependencies.
+- Added (docker) installation testing.
+- Added recommeded fields to package.json
+- Fixed (accidental?) use of global variables.
 
-* Updated package structure.
+### v0.3.1 [ 2014 August 27 ]
 
-* Code now uses strict-mode.
+**ENHANCMENTS:**
 
-* Minor updates to documentation.
+- Made it much easier to install polonium on Ubuntu.
 
-* Added explicit npm version dependencies.
+**PACKAGE-INTERNALS:**
 
-* Added (docker) installation testing.
-
-* Added recommeded fields to package.json
-
-* Fixed (accidental?) use of global variables.
-
-
-
-
-
-Polonium v0.3.1
-----------------------------------------------------------------
-Date: 2014 August 27
-
-ENHANCMENTS:
-
-* Made it much easier to install polonium on Ubuntu.
-
-PACKAGE-INTERNALS:
-
-* Seperated polonium's main function from it's docopt interface, to
+- Seperated polonium's main function from it's docopt interface, to
 help transition to using this package as a dependency for polonium-gui.
+- Started adding unit tests for polonium.
 
-* Started adding unit tests for polonium.
+### v0.2.1 [ 2014 August 22 ]
 
+**ENHANCMENTS:**
 
-
-
-
-
-
-Polonium v0.2.1
-----------------------------------------------------------------
-Date: 2014 August 22
-
-ENHANCMENTS:
-
-* Officially declared support for Windows, though no actual code changes
+- Officially declared support for Windows, though no actual code changes
 were required.
 
-DOCUMENTATION:
+**DOCUMENTATION:**
 
-* Added installation instructions for Windows, not currently tested.
+- Added installation instructions for Windows, not currently tested.
 
-BUG-FIXES:
+**BUG-FIXES:**
 
-* Added a newline missing from the error message displayed when
+- Added a newline missing from the error message displayed when
 the password prompt is exited.
 
+### v0.2.0 [ 2014 August 18 ]
 
+**BUG-FIXES:**
 
-
-
-
-
-
-
-
-Polonium v0.2.0
-----------------------------------------------------------------
-Date: 2014 August 18
-
-BUG-FIXES:
-
-* Fixed a long-outstanding security issue in Polonium. Approximately
+- Fixed a long-outstanding security issue in Polonium. Approximately
 11% of salt-password pairs could not be correctly coerced to a base62
 string for output. This update is not back compatible; you must reset
 all polonium passwords.
 
-
-
-
-
-
-
-
-
-
-
-Polonium v0.1.0
-----------------------------------------------------------------
-Date: 2014 June 4
+### v0.1.0 [ 2014 June 4 ]
 
 The initial release.
-
 
 ## Licence
 
