@@ -6,13 +6,13 @@ var packageJson = require('../../package.json')
 
 const doc = `
 Usage:
-  polonium create <salt> [-l <num> | --len <num>] [-r <num> | --rounds <num>] [--line] [-i <csv> | --indices <csv>] [-d <str> | --digest <str>]
-  polonium get <salt>    [-l <num> | --len <num>] [-r <num> | --rounds <num>] [--line] [-i <csv> | --indices <csv>] [-d <str> | --digest <str>]
+  polonium create <salt> [-l <num> | --len <num>] [-r <num> | --rounds <num>] [--line] [-i <csv> | --indices <csv>] [-g <num> | --group <num>] [-d <str> | --digest <str>]
+  polonium get <salt>    [-l <num> | --len <num>] [-r <num> | --rounds <num>] [--line] [-i <csv> | --indices <csv>] [-g <num> | --group <num>] [-d <str> | --digest <str>]
   polonium (-h | --help | --version)
 
 Security Note:
   By default, this password uses SHA1 hash digests. This will be changed in future, for the moment please specify a better
-  digest like sha512
+  digest like sha512 when creating new passwords.
 
 Description:
   Polonium is a stateless password manager based on PBKDF2. Polonium is 'stateless' in that
@@ -29,32 +29,34 @@ Description:
   additional arguments you pass to polonium you can retrieve your generated passwords.
 
   Polonium generates base62 alphanumeric passwords, which are accepted by most websites & are fairly
-  information-dense compared to hex photos.
+  information-dense compared to hexidecimal passwords.
 
   If you use 'password1' as your master password, your derived passwords will be easy to guess if attackers
   know the password was made with polonium. If they don't, your derived passwords will still be secure, even
   though they were made by a bad master password.
 
   Polonium is intentionally slow; the simplest way to protect passwords from being guessed through exhaustive
-  search is to make each guess slow.
+  search is to make each brute-force guess slow.
 
 Arguments:
-  <salt>        A string unique to a particular application or website.
-                Making the salt unpredicatable & secret increases the security
-                of your password. It is not critical that your salt be kept secret; you can use
-                the name of an application or site as your salt.
+  <salt>                       A string unique to a particular application or website.
+                               Making the salt unpredicatable & secret increases the security
+                               of your password. However it is not critical that your salt be kept secret; you can use
+                               the name of an application or site as your salt.
 
 Options:
   -l <num>, --len <num>        [default: 20] The length of the new output password.
                                  Longer passwords are more secure. For memorisability it is not recommended
-                                 to change this parametre unless a shorted password is required by an app.
+                                 to change this parametre unless a shorter password is required by an app.
   -r <num>, --rounds=<num>     [default: 1000000] The number of rounds of hashing to use.
                                  More rounds make brute force attacks more costly for the attacker.
                                  and increases the security of your password. It is highly unrecommended
                                  to lower this value below 100,000.
   -i <csv>, --indices <csv>    Comma-delimited indices within the password to select. This is included to
-                                 make it easy to fetch specific characters from bank passwords etc.
-  --line                       Print each charecter on a new line, with a line-number
+                                 make it easy to fetch specific characters from bank passwords.
+  --line                       Print each charecter on a new line, with a (one-indexed) line-number next to it.
+  -g <num>, --group <num>      Split passwords into line-delimited groups. Useful for chunking larger passwords
+                                 that cannot be easily copy-pasted.
   -d <str>, --digest <str>     The password digest to use [default: sha1]
   --version                    Show the current version number.
 

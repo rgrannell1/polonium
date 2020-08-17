@@ -55,6 +55,10 @@ polonium.preprocess = rawArgs => {
     args.rounds = null
   }
 
+  if (rawArgs['--group']) {
+    args.group = parseInt(rawArgs['--group'], 10)
+  }
+
   if (rawArgs['--line']) {
     args.line = true
   }

@@ -1,6 +1,6 @@
 name:        polonium
 grade:       stable
-version:     v1.1.0
+version:     v1.2.0
 summary:     Polonium is a stateless password manager based on PBKDF2.
 description: Polonium is a stateless password manager based on PBKDF2
 

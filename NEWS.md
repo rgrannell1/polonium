@@ -1,5 +1,15 @@
 
+Polonium v1.2.0
+----------------------------------------------------------------
+Date: 2020 August 17
+
+ENHANCEMENTS:
+* Added group option to group passwords into discreet groups of characters.
+
+
+
 Polonium v1.1.0
+----------------------------------------------------------------
 Date: 2020 March 29
 
 ENHANCEMENTS:

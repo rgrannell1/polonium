@@ -1,7 +1,5 @@
-Polonium v1.1.0
+Polonium v1.2.0
 ========
-
-[![Inline docs](http://inch-ci.org/github/rgrannell1/polonium.svg?branch=master)](http://inch-ci.org/github/rgrannell1/polonium)
 
 <img src="polonium.gif"> </img>
 
@@ -17,16 +15,21 @@ derives subordinate passwords for your various service logins. Even if these
 subordinate passwords are compromised the attacker cannot compromise your
 master password.
 
-### Requirements
+## Usage
 
-* A Linux distribution that supports Snap packages
-* For a manual installation, node.js >= v7.8.0
+```sh
+polonium get github
+```
 
---------------------------------
+## Build
 
-### Linux Installation
+```
+sudo snapcraft build --use-lxd
+```
 
-#### - Polonium
+## Installation
+
+### Snapcraft
 
 To install polonium quickly, use:
 
@@ -34,43 +37,33 @@ To install polonium quickly, use:
 sudo snap install polonium
 ```
 
-To test polonium use
-
-```
-polonium create github
-```
-
-and
-
-```
-polonium get github
-```
-
---------------------------------
-
-### Windows Installation *
-
-#### - Polonium
+### Git + NPM
 
 Run the following commands through Powershell:
 
-```
+```sh
 git clone https://github.com/rgrannell1/polonium.git
 cd polonium
 npm install -g
 ```
 
-To test polonium use
+## Files
 
 ```
-polonium create github
+src/
+  app/
+    fetch-master-password.js     reads the master password interactively.
+    polonium.js                  the core application.
+    report.js                    displays an output password.
+  cli/
+    cli.js                       the cli implementation.
+  commons/
+    constants.js                 a file full of constants.
 ```
 
-and
 
-```
-polonium get github
-```
+
+
 
 --------------------------------
 
@@ -130,13 +123,160 @@ the same output password. For this and many other reasons, **use a unique master
 
 * Currently untested.
 
-### Building
 
-```
-sudo snapcraft build --use-lxd
-```
+## Changelog
 
-### Licence
+
+Polonium v1.2.0
+----------------------------------------------------------------
+Date: 2020 August 17
+
+ENHANCEMENTS:
+* Added group option to group passwords into discreet groups of characters.
+
+
+
+Polonium v1.1.0
+----------------------------------------------------------------
+Date: 2020 March 29
+
+ENHANCEMENTS:
+* Updated packages
+
+Polonium v1.0.0
+Date: 2019 June 15
+
+ENHANCEMENTS:
+
+* Added slightly more documentation about the default SHA hash
+* Added a `--line` option, which prints each character of a password along with it's indices
+
+PACKAGE-INTERNALS:
+
+* Remove Makefile & switched to NPM scripts
+* Add `base` to snap package
+
+Polonium v0.5.1
+----------------------------------------------------------------
+Date: 2015 February 14
+
+ENHANCMENTS:
+
+* Ported more code to use ES6
+
+* Reduces poor code factoring and fixed poor folder structure.
+
+* Added short options for length and rounds arguments.
+
+* Removed (node-gyp depending) bignum package, refactoring to use a JS-only package.
+
+
+
+
+
+Polonium v0.4.1
+----------------------------------------------------------------
+Date: 2015 December 31
+
+ENHANCMENTS:
+
+* Ported some code to use ES6 features.
+
+* Updated package structure.
+
+* Code now uses strict-mode.
+
+* Minor updates to documentation.
+
+* Added explicit npm version dependencies.
+
+* Added (docker) installation testing.
+
+* Added recommeded fields to package.json
+
+* Fixed (accidental?) use of global variables.
+
+
+
+
+
+Polonium v0.3.1
+----------------------------------------------------------------
+Date: 2014 August 27
+
+ENHANCMENTS:
+
+* Made it much easier to install polonium on Ubuntu.
+
+PACKAGE-INTERNALS:
+
+* Seperated polonium's main function from it's docopt interface, to
+help transition to using this package as a dependency for polonium-gui.
+
+* Started adding unit tests for polonium.
+
+
+
+
+
+
+
+Polonium v0.2.1
+----------------------------------------------------------------
+Date: 2014 August 22
+
+ENHANCMENTS:
+
+* Officially declared support for Windows, though no actual code changes
+were required.
+
+DOCUMENTATION:
+
+* Added installation instructions for Windows, not currently tested.
+
+BUG-FIXES:
+
+* Added a newline missing from the error message displayed when
+the password prompt is exited.
+
+
+
+
+
+
+
+
+
+
+Polonium v0.2.0
+----------------------------------------------------------------
+Date: 2014 August 18
+
+BUG-FIXES:
+
+* Fixed a long-outstanding security issue in Polonium. Approximately
+11% of salt-password pairs could not be correctly coerced to a base62
+string for output. This update is not back compatible; you must reset
+all polonium passwords.
+
+
+
+
+
+
+
+
+
+
+
+Polonium v0.1.0
+----------------------------------------------------------------
+Date: 2014 June 4
+
+The initial release.
+
+
+## Licence
 
 The MIT License
 

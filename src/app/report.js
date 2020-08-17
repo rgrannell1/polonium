@@ -38,9 +38,28 @@ report.selectPassword = (string, indices) => {
  *
  */
 report.password = (password, args) => {
-  const selection = selectPassword(password, args.indices)
+  const selection = report.selectPassword(password, args.indices)
 
-  if (args.line) {
+  if (args.group) {
+    let index = 1
+    let buffer = []
+    for (const data of selection) {
+      buffer.push(data.char)
+
+      if (buffer.length >= args.group) {
+        const indexStr = (index + '').padEnd(2)
+        console.error(`${indexStr} ${buffer.join('')}`)
+  
+        buffer = [ ]
+        index++
+      }
+    }
+
+    if (buffer.length > 0) {
+      const indexStr = (index + '').padEnd(2)
+      console.error(`${indexStr} ${buffer.join('')}`)
+    }
+  } else if (args.line) {
     for (const data of selection) {
       const index = (data.index + '').padEnd(2)
       console.error(`${index} ${data.char}`)
