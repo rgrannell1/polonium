@@ -27,6 +27,8 @@ polonium get github
 sudo snapcraft build --use-lxd
 ```
 
+Note that most of the logic in this program is performed by https://github.com/rgrannell1/polonium-lib.
+
 ## Installation
 
 ### Snapcraft
@@ -61,11 +63,7 @@ src/
     constants.js                 a file full of constants.
 ```
 
-
-
-
-
---------------------------------
+---
 
 ### Details
 

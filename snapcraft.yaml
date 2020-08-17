@@ -11,11 +11,11 @@ base: core18
 apps:
   polonium:
     command: bin/polo
-    plugs: ['network']
 
 parts:
   polonium:
     source: .
     plugin: nodejs
+    nodejs-version: 14.3.0
     nodejs-package-manager: npm
     build-packages: ['libcurl4-openssl-dev', 'git']
