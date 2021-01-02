@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "author": "Róisín Grannell <r.grannell2@gmail.com>",
   "bin": {
-    "polo": "./src/cli/cli.js"
+    "polo": "src/cli/cli.js"
   },
   "repository": {
     "type": "git",
